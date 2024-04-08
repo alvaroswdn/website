@@ -1,0 +1,16 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.6.4/schema.json",
+  "files": {
+    "include": ["src/**/*.ts", "src/**/*.svelte", "src/**/*.css"],
+    "ignore": [".svelte-kit"]
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded"
+    }
+  }
+}

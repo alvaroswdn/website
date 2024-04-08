@@ -1,0 +1,33 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "package": "svelte-kit package",
+    "preview": "vite preview",
+    "postinstall": "svelte-kit sync",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "biome lint .",
+    "lintw": "biome lint --apply .",
+    "format": "biome format  .",
+    "formatw": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.6.3",
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@types/bun": "latest",
+    "svelte": "^4.2.5",
+    "svelte-check": "^3.6.0",
+    "svelte-preprocess": "^5.1.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  },
+  "type": "module",
+  "trustedDependencies": ["@biomejs/biome"]
+}

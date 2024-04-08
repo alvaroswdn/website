@@ -84,7 +84,7 @@
       </a>
       <a
         class="contact-item"
-        href="mailto:alvaro.s@skiff.com"
+        href="#inactive"
         aria-label="email"
       >
         <svg
@@ -102,7 +102,7 @@
         </svg>
       </a>
     </div>
-    Copyright 2023
+    Copyright 2024
   </div>
 </nav>
 

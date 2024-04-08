@@ -90,7 +90,7 @@
         />
       </svg>
     </a>
-    <a class="contact-item" href="mailto:alvaro.s@skiff.com" aria-label="email">
+    <a class="contact-item" href="#inactive" aria-label="email">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

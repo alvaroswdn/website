@@ -39,7 +39,7 @@
     <div class="footer-contact">
       <a
         class="contact-item"
-        href="https://www.instagram.com/alvaro.soewardono"
+        href="https://www.instagram.com/alvaroswdn"
         target="_blank"
         aria-label="instagram"
       >

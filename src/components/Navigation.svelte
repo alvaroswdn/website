@@ -82,11 +82,8 @@
           />
         </svg>
       </a>
-      <a
-        class="contact-item"
-        href="#inactive"
-        aria-label="email"
-      >
+      <!-- svelte-ignore a11y-invalid-attribute -->
+      <a class="contact-item" href="#" aria-label="email">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

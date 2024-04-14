@@ -17,7 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>Highlights</title>
+  <title>Highlights - alvaroswdn</title>
   <meta name="description" content="Some of my best high school highlights." />
   <link
     rel="preload"

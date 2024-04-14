@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
+  <title>Home - alvaroswdn</title>
   <link rel="preload" as="image" href="/icons/logo.webp" />
 </svelte:head>
 

@@ -15,6 +15,15 @@ const config = {
     alias: {
       $components: 'src/components',
     },
+    csp: {
+      directives : {
+        'default-src': ['self'],
+        'style-src': ['self', 'unsafe-inline'],
+        'script-src': ['self', 'https://static.cloudflareinsights.com', 'unsafe-inline'],
+        'frame-ancestors': ['none'],
+        'object-src': ['none'],
+      },
+    },
   },
 };
 

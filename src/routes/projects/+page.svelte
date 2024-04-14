@@ -109,7 +109,7 @@
 </script>
 
 <svelte:head>
-  <title>Projects</title>
+  <title>Projects - alvaroswdn</title>
   <meta name="description" content="Some projects I've worked on previously." />
   {#each projectList as project}
     <link rel="preload" as="image" href={project.thumb} />

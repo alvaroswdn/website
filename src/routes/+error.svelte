@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <title>{$page.error?.message}</title>
+  <title>Error - alvaroswdn</title>
   <meta
     name="description"
     content="Please go back to the home page or report this issue through one of my socials."

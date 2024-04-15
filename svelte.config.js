@@ -17,11 +17,15 @@ const config = {
     },
     csp: {
       directives : {
-        'default-src': ['self'],
+        'default-src': ['none'],
+        'img-src': ['self'],
         'style-src': ['self', 'unsafe-inline'],
         'script-src': ['self', 'https://static.cloudflareinsights.com', 'unsafe-inline'],
+        'connect-src': ['self', 'https://cloudflareinsights.com'],
         'frame-ancestors': ['none'],
         'object-src': ['none'],
+        'base-uri': ['self'],
+        'form-action': ['self'],
       },
     },
   },

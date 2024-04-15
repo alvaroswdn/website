@@ -22,6 +22,8 @@ const config = {
         'style-src': ['self', 'unsafe-inline'],
         'script-src': ['self', 'https://static.cloudflareinsights.com', 'unsafe-inline'],
         'connect-src': ['self', 'https://cloudflareinsights.com'],
+        'font-src': ['self'],
+        'manifest-src': ['self'],
         'frame-ancestors': ['none'],
         'object-src': ['none'],
         'base-uri': ['self'],

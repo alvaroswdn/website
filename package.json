@@ -29,5 +29,5 @@
     "vite": "^5.0.0"
   },
   "type": "module",
-  "trustedDependencies": ["@biomejs/biome", "esbuild", "svelte-preprocess"]
+  "trustedDependencies": ["@biomejs/biome", "esbuild", "svelte-preprocess", "@sveltejs/kit"]
 }

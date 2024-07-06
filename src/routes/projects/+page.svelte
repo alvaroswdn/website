@@ -1,111 +1,25 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { fly } from 'svelte/transition';
+  import { onMount } from 'svelte'
+  import { fly } from 'svelte/transition'
+  import { Link, projectList } from './data'
 
-  enum Link {
-    MODAL,
-    FILE,
-  }
-
-  type Project = {
-    thumb: string;
-    link: Link;
-    file: string;
-    alt: string;
-  };
-
-  const projectList: Project[] = [
-    {
-      thumb: '/projects/thumb/trigonometri.webp',
-      link: Link.FILE,
-      file: 'https://drive.google.com/file/d/1jR8vbaOXDhvklQFpZvdEGqAQwKB6R-vW/view?usp=sharing',
-      alt: 'limit trigonometri',
-    },
-    {
-      thumb: '/projects/thumb/ilmiah2.webp',
-      link: Link.FILE,
-      file: '/projects/content/ilmiah2.pdf',
-      alt: 'poster karya ilmiah 2',
-    },
-    {
-      thumb: '/projects/thumb/hiv.webp',
-      link: Link.MODAL,
-      file: '/projects/content/hiv.webp',
-      alt: 'infografis HIV',
-    },
-    {
-      thumb: '/projects/thumb/stroke.webp',
-      link: Link.MODAL,
-      file: '/projects/content/stroke.webp',
-      alt: 'infografis stroke',
-    },
-    {
-      thumb: '/projects/thumb/notre.webp',
-      link: Link.FILE,
-      file: '/projects/content/notre.pdf',
-      alt: 'presentasi notre dame',
-    },
-    {
-      thumb: '/projects/thumb/pidana.webp',
-      link: Link.FILE,
-      file: '/projects/content/pidana.pdf',
-      alt: 'presentasi hukum pidana',
-    },
-    {
-      thumb: '/projects/thumb/ilmiah.webp',
-      link: Link.FILE,
-      file: '/projects/content/ilmiah.pdf',
-      alt: 'karya ilmiah',
-    },
-    {
-      thumb: '/projects/thumb/bronkitis.webp',
-      link: Link.MODAL,
-      file: '/projects/content/bronkitis.webp',
-      alt: 'poster penyakit pernapasan bronkitis',
-    },
-    {
-      thumb: '/projects/thumb/gam.webp',
-      link: Link.MODAL,
-      file: '/projects/content/gam.webp',
-      alt: 'poster gerakan aceh merdeka',
-    },
-    {
-      thumb: '/projects/thumb/anne.webp',
-      link: Link.MODAL,
-      file: '/projects/content/anne.webp',
-      alt: 'poster biografi anne frank',
-    },
-    {
-      thumb: '/projects/thumb/kebaikan.webp',
-      link: Link.MODAL,
-      file: '/projects/content/kebaikan.webp',
-      alt: 'poster kampanye kebaikan',
-    },
-    {
-      thumb: '/projects/thumb/proklamasi.webp',
-      link: Link.FILE,
-      file: '/projects/content/proklamasi.pdf',
-      alt: 'poster proklamasi',
-    },
-  ];
-
-  let modalVisible = false;
-  let modalImage = '';
-  let modalAlt = '';
+  let modalVisible = false
+  let modalImage = ''
+  let modalAlt = ''
 
   function showModal(image: string, alt: string) {
-    modalImage = image;
-    modalAlt = alt;
-    modalVisible = true;
+    modalImage = image
+    modalAlt = alt
+    modalVisible = true
   }
 
-  let loadContent = false;
+  let loadContent = false
   onMount(() => {
-    loadContent = true;
+    loadContent = true
     window.onkeyup = (e) => {
-      if (e.code == 'Escape') modalVisible = false;
-    };
-  });
+      if (e.code == 'Escape') modalVisible = false
+    }
+  })
 </script>
 
 <svelte:head>
@@ -120,7 +34,7 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div class="modal" on:click={() => (modalVisible = false)}>
-    <img src={modalImage} alt={modalAlt} />
+    <img class="modal-img" src={modalImage} alt={modalAlt} />
   </div>
 {/if}
 
@@ -175,12 +89,12 @@
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <!-- svelte-ignore a11y-no-static-element-interactions -->
           <div on:click={() => showModal(project.file, project.alt)}>
-            <img src={project.thumb} alt={project.alt} />
+            <img class="gallery-img" src={project.thumb} alt={project.alt} />
           </div>
         {:else}
-          <a href={project.file}
-            ><img src={project.thumb} alt={project.alt} /></a
-          >
+          <a href={project.file}>
+            <img class="gallery-img" src={project.thumb} alt={project.alt} />
+          </a>
         {/if}
       {/each}
     </div>
@@ -200,7 +114,7 @@
     display: inline-block;
   }
 
-  .modal > img {
+  .modal-img {
     width: 90%;
     max-width: 40rem;
     margin: auto;
@@ -228,7 +142,7 @@
     cursor: pointer;
   }
 
-  .gallery img {
+  .gallery-img {
     width: 100%;
     height: auto;
     margin-bottom: 0.8rem;
@@ -238,7 +152,7 @@
     border-radius: 0.6rem;
   }
 
-  .gallery img:hover {
+  .gallery-img:hover {
     outline: 0.2rem solid var(--clr-primary-400);
   }
 

@@ -17,16 +17,17 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.3",
-    "@sveltejs/adapter-static": "^3.0.0",
-    "@sveltejs/kit": "^2.0.0",
-    "@sveltejs/vite-plugin-svelte": "^3.0.0",
-    "@types/bun": "latest",
-    "svelte": "^4.2.5",
-    "svelte-check": "^3.6.0",
-    "svelte-preprocess": "^5.1.0",
-    "tslib": "^2.6.2",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.0"
+    "@sveltejs/adapter-static": "^3.0.2",
+    "@sveltejs/enhanced-img": "^0.3.0",
+    "@sveltejs/kit": "^2.5.18",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@types/bun": "^1.1.6",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.4",
+    "svelte-preprocess": "^5.1.4",
+    "tslib": "^2.6.3",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3"
   },
   "type": "module",
   "trustedDependencies": ["@biomejs/biome", "esbuild", "svelte-preprocess", "@sveltejs/kit"]

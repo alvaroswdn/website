@@ -1,8 +1,10 @@
 import { sveltekit } from '@sveltejs/kit/vite'
-import type { UserConfig } from 'vite'
+import { enhancedImages } from '@sveltejs/enhanced-img'
+import { defineConfig } from 'vite'
 
-const config: UserConfig = {
-	plugins: [sveltekit()],
-}
-
-export default config
+export default defineConfig({
+	plugins: [
+		// enhancedImages(),
+		sveltekit()
+	],
+})

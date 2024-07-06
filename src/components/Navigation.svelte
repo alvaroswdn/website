@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { getContext } from 'svelte';
-  import type { Writable } from 'svelte/store';
-  import { fade, fly } from 'svelte/transition';
-  const toggleNavigation: Writable<boolean> = getContext('toggleNavigation');
+  import { getContext } from 'svelte'
+  import type { Writable } from 'svelte/store'
+  import { fade, fly } from 'svelte/transition'
+  const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
 </script>
 
 <nav

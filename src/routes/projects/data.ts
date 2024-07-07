@@ -1,15 +1,24 @@
-// import thumbTrigonometri from './thumb/trigonometri.webp'
-// import thumbIlmiah2 from './thumb/ilmiah2.webp'
-// import thumbHIV from './thumb/hiv.webp'
-// import thumbStroke from './thumb/stroke.webp'
-// import thumbNotre from './thumb/notre.webp'
-// import thumbPidana from './thumb/pidana.webp'
-// import thumbIlmiah from './thumb/ilmiah.webp'
-// import thumbBronkitis from './thumb/bronkitis.webp'
-// import thumbGAM from './thumb/gam.webp'
-// import thumbAnne from './thumb/anne.webp'
-// import thumbKebaikan from './thumb/kebaikan.webp'
-// import thumbProklamasi from './thumb/proklamasi.webp'
+// @ts-nocheck
+
+import thumbTrigonometri from './thumb/trigonometri.webp?enhanced'
+import thumbIlmiah2 from './thumb/ilmiah2.webp?enhanced'
+import thumbHIV from './thumb/hiv.webp?enhanced'
+import thumbStroke from './thumb/stroke.webp?enhanced'
+import thumbNotre from './thumb/notre.webp?enhanced'
+import thumbPidana from './thumb/pidana.webp?enhanced'
+import thumbIlmiah from './thumb/ilmiah.webp?enhanced'
+import thumbBronkitis from './thumb/bronkitis.webp?enhanced'
+import thumbGAM from './thumb/gam.webp?enhanced'
+import thumbAnne from './thumb/anne.webp?enhanced'
+import thumbKebaikan from './thumb/kebaikan.webp?enhanced'
+import thumbProklamasi from './thumb/proklamasi.webp?enhanced'
+
+import contentHIV from './content/hiv.webp?enhanced'
+import contentStroke from './content/stroke.webp?enhanced'
+import contentBronkitis from './content/bronkitis.webp?enhanced'
+import contentGAM from './content/gam.webp?enhanced'
+import contentAnne from './content/anne.webp?enhanced'
+import contentKebaikan from './content/kebaikan.webp?enhanced'
 
 export enum Link {
   MODAL = 0,
@@ -19,81 +28,82 @@ export enum Link {
 type Project = {
   thumb: string
   link: Link
-  file: string
+  content: string
   alt: string
 }
 
 export const projectList: Project[] = [
   {
-    thumb: '/projects/thumb/trigonometri.webp',
+    thumb: thumbTrigonometri,
     link: Link.FILE,
-    file: 'https://drive.google.com/file/d/1jR8vbaOXDhvklQFpZvdEGqAQwKB6R-vW/view?usp=sharing',
+    content:
+      'https://drive.google.com/content/d/1jR8vbaOXDhvklQFpZvdEGqAQwKB6R-vW/view?usp=sharing',
     alt: 'limit trigonometri',
   },
   {
-    thumb: '/projects/thumb/ilmiah2.webp',
+    thumb: thumbIlmiah2,
     link: Link.FILE,
-    file: '/projects/content/ilmiah2.pdf',
+    content: '/projects/content/ilmiah2.pdf',
     alt: 'poster karya ilmiah 2',
   },
   {
-    thumb: '/projects/thumb/hiv.webp',
+    thumb: thumbHIV,
     link: Link.MODAL,
-    file: '/projects/content/hiv.webp',
+    content: contentHIV,
     alt: 'infografis HIV',
   },
   {
-    thumb: '/projects/thumb/stroke.webp',
+    thumb: thumbStroke,
     link: Link.MODAL,
-    file: '/projects/content/stroke.webp',
+    content: contentStroke,
     alt: 'infografis stroke',
   },
   {
-    thumb: '/projects/thumb/notre.webp',
+    thumb: thumbNotre,
     link: Link.FILE,
-    file: '/projects/content/notre.pdf',
+    content: '/projects/content/notre.pdf',
     alt: 'presentasi notre dame',
   },
   {
-    thumb: '/projects/thumb/pidana.webp',
+    thumb: thumbPidana,
     link: Link.FILE,
-    file: '/projects/content/pidana.pdf',
+    content: '/projects/content/pidana.pdf',
     alt: 'presentasi hukum pidana',
   },
   {
-    thumb: '/projects/thumb/ilmiah.webp',
+    thumb: thumbIlmiah,
     link: Link.FILE,
-    file: '/projects/content/ilmiah.pdf',
+    content: '/projects/content/ilmiah.pdf',
     alt: 'karya ilmiah',
   },
   {
-    thumb: '/projects/thumb/bronkitis.webp',
+    thumb: thumbBronkitis,
     link: Link.MODAL,
-    file: '/projects/content/bronkitis.webp',
+    content: contentBronkitis,
     alt: 'poster penyakit pernapasan bronkitis',
   },
   {
-    thumb: '/projects/thumb/gam.webp',
+    thumb: thumbGAM,
     link: Link.MODAL,
-    file: '/projects/content/gam.webp',
+    content: contentGAM,
     alt: 'poster gerakan aceh merdeka',
   },
   {
-    thumb: '/projects/thumb/anne.webp',
+    thumb: thumbAnne,
     link: Link.MODAL,
-    file: '/projects/content/anne.webp',
+    content: contentAnne,
     alt: 'poster biografi anne frank',
   },
   {
-    thumb: '/projects/thumb/kebaikan.webp',
+    thumb: thumbKebaikan,
     link: Link.MODAL,
-    file: '/projects/content/kebaikan.webp',
+    content: contentKebaikan,
     alt: 'poster kampanye kebaikan',
   },
   {
-    thumb: '/projects/thumb/proklamasi.webp',
+    thumb: thumbProklamasi,
     link: Link.FILE,
-    file: '/projects/content/proklamasi.pdf',
+    content: '/projects/content/proklamasi.pdf',
     alt: 'poster proklamasi',
   },
 ]

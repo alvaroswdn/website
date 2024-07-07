@@ -25,16 +25,17 @@
 <svelte:head>
   <title>Projects - alvaroswdn</title>
   <meta name="description" content="Some projects I've worked on previously." />
-  {#each projectList as project}
-    <link rel="preload" as="image" href={project.thumb} />
-  {/each}
 </svelte:head>
 
 {#if modalVisible}
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="modal" on:click={() => (modalVisible = false)}>
-    <img class="modal-img" src={modalImage} alt={modalAlt} />
+  <div class="modal">
+    <enhanced:img class="modal-img" src={modalImage} alt={modalAlt} />
+    <button class="modal-close" on:click={() => (modalVisible = false)}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
   </div>
 {/if}
 
@@ -86,14 +87,12 @@
     <div class="gallery" in:fly={{ y: 100, delay: 100 }}>
       {#each projectList as project}
         {#if project.link == Link.MODAL}
-          <!-- svelte-ignore a11y-click-events-have-key-events -->
-          <!-- svelte-ignore a11y-no-static-element-interactions -->
-          <div on:click={() => showModal(project.file, project.alt)}>
-            <img class="gallery-img" src={project.thumb} alt={project.alt} />
-          </div>
+          <button on:click={() => showModal(project.content, project.alt)}>
+            <enhanced:img class="gallery-img" src={project.thumb} alt={project.alt} fetchpriority="high" loading="eager" />
+          </button>
         {:else}
-          <a href={project.file}>
-            <img class="gallery-img" src={project.thumb} alt={project.alt} />
+          <a href={project.content}>
+            <enhanced:img class="gallery-img" src={project.thumb} alt={project.alt} fetchpriority="high" loading="eager" />
           </a>
         {/if}
       {/each}
@@ -118,6 +117,17 @@
     width: 90%;
     max-width: 40rem;
     margin: auto;
+    height: auto;
+    color: #fafafa;
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 1.2rem;
+    color: #fafafa;
+    width: 2rem;
+    cursor: pointer;
   }
 
   .content {
@@ -138,10 +148,6 @@
     gap: 0.8rem;
   }
 
-  .gallery > div {
-    cursor: pointer;
-  }
-
   .gallery-img {
     width: 100%;
     height: auto;
@@ -149,7 +155,7 @@
     transition: 0.1s ease-out;
     position: relative;
     overflow: hidden;
-    border-radius: 0.6rem;
+    border-radius: 0.4rem;
   }
 
   .gallery-img:hover {

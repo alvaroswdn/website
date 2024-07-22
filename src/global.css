@@ -3,6 +3,7 @@
   --clr-accent-400: hsl(248deg 30% 53%);
   --clr-accent-100: hsl(248deg 30% 73%);
   --clr-primary-400: hsl(181deg 94% 28%);
+  --clr-primary-100: hsl(181deg 20% 42%);
   --clr-neutral-100: hsl(21deg 41% 92%);
   --clr-neutral-900: hsl(0deg 0% 0%);
   --ff-primary: 'Playfair Display', serif;
@@ -14,6 +15,7 @@
   --fs-500: 1rem;
   --fs-600: 1.275rem;
   --fs-700: 1.875rem;
+  --fs-800: 2rem;
   --fs-body: var(--fs-400);
   --fs-nav: var(--fs-500);
 }

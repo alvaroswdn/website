@@ -82,7 +82,7 @@
           />
         </svg>
       </a>
-      <a class="contact-item" href="mailto:hello@alvaroswdn.my.id" aria-label="email">
+      <a class="contact-item" href="mailto:Alvaro%20Raditya%20Soewardono<hello@alvaroswdn.my.id>" aria-label="email">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"

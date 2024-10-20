@@ -1,9 +1,11 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { fade } from 'svelte/transition'
+import { onMount } from 'svelte'
+import { fade } from 'svelte/transition'
 
-  let loadContent = false
-  onMount(() => (loadContent = true))
+let loadContent = false
+onMount(() => {
+  loadContent = true
+})
 </script>
 
 <svelte:head>

@@ -1,18 +1,20 @@
 <script lang="ts">
-  import '../global.css'
-  import { navigating } from '$app/stores'
-  import Navigation from '$components/Navigation.svelte'
-  import { writable } from 'svelte/store'
-  import { setContext } from 'svelte'
+import '../global.css'
+import { navigating } from '$app/stores'
+import Navigation from '$components/Navigation.svelte'
+import { writable } from 'svelte/store'
+import { setContext } from 'svelte'
 
-  export const toggleNavigation = writable(false)
+const toggleNavigation = writable(false)
 
-  let toggleNavigationValue: boolean
-  toggleNavigation.subscribe((value) => (toggleNavigationValue = value))
+let toggleNavigationValue: boolean
+toggleNavigation.subscribe((value) => {
+  toggleNavigationValue = value
+})
 
-  $: if ($navigating) toggleNavigation.set(false)
+$: if ($navigating) toggleNavigation.set(false)
 
-  setContext('toggleNavigation', toggleNavigation)
+setContext('toggleNavigation', toggleNavigation)
 </script>
 
 <header class="header">

@@ -1,25 +1,25 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { fly } from 'svelte/transition'
-  import { Link, projectList } from './data'
+import { onMount } from 'svelte'
+import { fly } from 'svelte/transition'
+import { Link, projectList } from './data'
 
-  let modalVisible = false
-  let modalImage = ''
-  let modalAlt = ''
+let modalVisible = false
+let modalImage = ''
+let modalAlt = ''
 
-  function showModal(image: string, alt: string) {
-    modalImage = image
-    modalAlt = alt
-    modalVisible = true
+function showModal(image: string, alt: string) {
+  modalImage = image
+  modalAlt = alt
+  modalVisible = true
+}
+
+let loadContent = false
+onMount(() => {
+  loadContent = true
+  window.onkeyup = (e) => {
+    if (e.code === 'Escape') modalVisible = false
   }
-
-  let loadContent = false
-  onMount(() => {
-    loadContent = true
-    window.onkeyup = (e) => {
-      if (e.code == 'Escape') modalVisible = false
-    }
-  })
+})
 </script>
 
 <svelte:head>

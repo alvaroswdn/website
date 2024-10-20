@@ -1,19 +1,23 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { fly } from 'svelte/transition'
-  import Year10 from '$components/Year10.svelte'
-  import Year11 from '$components/Year11.svelte'
-  import Year12 from '$components/Year12.svelte'
+import { onMount } from 'svelte'
+import { fly } from 'svelte/transition'
+import Year10 from '$components/Year10.svelte'
+import Year11 from '$components/Year11.svelte'
+import Year12 from '$components/Year12.svelte'
 
-  let selectedYear = 10
+let selectedYear = 10
 
-  function changeYear(year: number) {
-    document.body.scrollTop = 0
-    setTimeout(() => (selectedYear = year), 100)
-  }
+function changeYear(year: number) {
+  document.body.scrollTop = 0
+  setTimeout(() => {
+    selectedYear = year
+  }, 100)
+}
 
-  let loadContent = false
-  onMount(() => (loadContent = true))
+let loadContent = false
+onMount(() => {
+  loadContent = true
+})
 </script>
 
 <svelte:head>

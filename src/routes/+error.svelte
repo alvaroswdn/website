@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { fly } from 'svelte/transition'
-  import { onMount } from 'svelte'
-  import { page } from '$app/stores'
+import { fly } from 'svelte/transition'
+import { onMount } from 'svelte'
+import { page } from '$app/stores'
 
-  let loadDecoration = false
-  onMount(() => (loadDecoration = true))
+let loadDecoration = false
+onMount(() => {
+  loadDecoration = true
+})
 </script>
 
 <svelte:head>

@@ -2,8 +2,8 @@
 import { onMount } from 'svelte'
 import { fade } from 'svelte/transition'
 
-let loadContent = false
-onMount(() => {
+let loadContent = $state(false)
+$effect(() => {
   loadContent = true
 })
 </script>

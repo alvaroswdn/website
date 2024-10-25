@@ -3,9 +3,9 @@ import { onMount } from 'svelte'
 import { fly } from 'svelte/transition'
 import { Link, projectList } from './data'
 
-let modalVisible = false
-let modalImage = ''
-let modalAlt = ''
+let modalVisible = $state(false)
+let modalImage = $state('')
+let modalAlt = $state('')
 
 function showModal(image: string, alt: string) {
   modalImage = image
@@ -13,7 +13,7 @@ function showModal(image: string, alt: string) {
   modalVisible = true
 }
 
-let loadContent = false
+let loadContent = $state(false)
 onMount(() => {
   loadContent = true
   window.onkeyup = (e) => {
@@ -30,7 +30,7 @@ onMount(() => {
 {#if modalVisible}
   <div class="modal">
     <enhanced:img class="modal-img" src={modalImage} alt={modalAlt} />
-    <button class="modal-close" on:click={() => (modalVisible = false)}>
+    <button class="modal-close" aria-label="Close modal" onclick={() => (modalVisible = false)}>
       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -87,11 +87,11 @@ onMount(() => {
     <div class="gallery" in:fly={{ y: 100, delay: 100 }}>
       {#each projectList as project}
         {#if project.link == Link.MODAL}
-          <button on:click={() => showModal(project.content, project.alt)}>
+          <button aria-label="Open image modal" onclick={() => showModal(project.content, project.alt)}>
             <enhanced:img class="gallery-img" src={project.thumb} alt={project.alt} fetchpriority="high" loading="eager" />
           </button>
         {:else}
-          <a href={project.content}>
+          <a aria-label="Open image content" href={project.content}>
             <enhanced:img class="gallery-img" src={project.thumb} alt={project.alt} fetchpriority="high" loading="eager" />
           </a>
         {/if}

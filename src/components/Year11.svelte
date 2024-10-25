@@ -2,7 +2,7 @@
 import { onMount } from 'svelte'
 import { fade } from 'svelte/transition'
 
-let loadContent = false
+let loadContent = $state(false)
 onMount(() => {
   loadContent = true
 })

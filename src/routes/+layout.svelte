@@ -5,14 +5,15 @@ import Navigation from '$components/Navigation.svelte'
 import { writable } from 'svelte/store'
 import { setContext } from 'svelte'
 
+const { children } = $props()
 const toggleNavigation = writable(false)
 
-let toggleNavigationValue: boolean
+let toggleNavigationValue = $state(false)
 toggleNavigation.subscribe((value) => {
   toggleNavigationValue = value
 })
 
-$: if ($navigating) toggleNavigation.set(false)
+$effect(() => { if ($navigating) toggleNavigation.set(false) })
 
 setContext('toggleNavigation', toggleNavigation)
 </script>
@@ -21,7 +22,7 @@ setContext('toggleNavigation', toggleNavigation)
   <div class="header-nav">
     <button
       class="nav-toggle"
-      on:click={() => toggleNavigation.set(true)}
+      onclick={() => toggleNavigation.set(true)}
       aria-label="open navigation"
     >
       <svg
@@ -111,7 +112,7 @@ setContext('toggleNavigation', toggleNavigation)
 </header>
 
 <main class="main">
-  <slot />
+  {@render children()}
 </main>
 
 <style>

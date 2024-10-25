@@ -5,7 +5,7 @@ import Year10 from '$components/Year10.svelte'
 import Year11 from '$components/Year11.svelte'
 import Year12 from '$components/Year12.svelte'
 
-let selectedYear = 10
+let selectedYear = $state(10)
 
 function changeYear(year: number) {
   document.body.scrollTop = 0
@@ -14,7 +14,7 @@ function changeYear(year: number) {
   }, 100)
 }
 
-let loadContent = false
+let loadContent = $state(false)
 onMount(() => {
   loadContent = true
 })
@@ -92,15 +92,15 @@ onMount(() => {
     <div class="year-selector fs-600">
       <button
         class={selectedYear == 10 ? 'active' : ''}
-        on:click={() => changeYear(10)}>X</button
+        onclick={() => changeYear(10)}>X</button
       >
       <button
         class={selectedYear == 11 ? 'active' : ''}
-        on:click={() => changeYear(11)}>XI</button
+        onclick={() => changeYear(11)}>XI</button
       >
       <button
         class={selectedYear == 12 ? 'active' : ''}
-        on:click={() => changeYear(12)}>XII</button
+        onclick={() => changeYear(12)}>XII</button
       >
     </div>
   {/if}

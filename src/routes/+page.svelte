@@ -2,7 +2,7 @@
 import { fly } from 'svelte/transition'
 import { onMount } from 'svelte'
 
-let loadDecoration = false
+let loadDecoration = $state(false)
 onMount(() => {
   loadDecoration = true
 })

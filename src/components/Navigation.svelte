@@ -12,7 +12,7 @@ const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
 >
   <div class="nav-toggle">
     <button
-      on:click={() => toggleNavigation.set(false)}
+      onclick={() => toggleNavigation.set(false)}
       aria-label="close navigation"
     >
       <svg
@@ -102,13 +102,10 @@ const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
   </div>
 </nav>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   class="darken"
   in:fade={{ duration: 300 }}
   out:fade={{ duration: 400 }}
-  on:click={() => toggleNavigation.set(false)}
 ></div>
 
 <style>

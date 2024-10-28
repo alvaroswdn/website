@@ -2,27 +2,19 @@
 import '../global.css'
 import { navigating } from '$app/stores'
 import Navigation from '$components/Navigation.svelte'
-import { writable } from 'svelte/store'
-import { setContext } from 'svelte'
+import { createToggle } from '../utils/toggle.svelte';
 
 const { children } = $props()
-const toggleNavigation = writable(false)
-
-let toggleNavigationValue = $state(false)
-toggleNavigation.subscribe((value) => {
-  toggleNavigationValue = value
-})
+const toggleNavigation = createToggle()
 
 $effect(() => { if ($navigating) toggleNavigation.set(false) })
-
-setContext('toggleNavigation', toggleNavigation)
 </script>
 
 <header class="header">
   <div class="header-nav">
     <button
       class="nav-toggle"
-      onclick={() => toggleNavigation.set(true)}
+      onclick={() => toggleNavigation.toggle()}
       aria-label="open navigation"
     >
       <svg
@@ -40,8 +32,8 @@ setContext('toggleNavigation', toggleNavigation)
         />
       </svg>
     </button>
-    {#if toggleNavigationValue}
-      <Navigation />
+    {#if toggleNavigation.status}
+      <Navigation toggle={toggleNavigation} />
     {/if}
   </div>
   <div class="header-title">
@@ -142,6 +134,7 @@ setContext('toggleNavigation', toggleNavigation)
     display: flex;
     justify-content: center;
     font-size: var(--fs-600);
+    font-family: var(--ff-accent);
   }
 
   .header-contact {

@@ -123,6 +123,7 @@ onMount(() => {
   :global(.year-content h2) {
     color: var(--clr-accent-400);
     font-size: var(--fs-700);
+    font-family: var(--ff-accent);
   }
 
   :global(.year-content p) {

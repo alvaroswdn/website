@@ -6,7 +6,8 @@
   --clr-primary-100: hsl(181deg 20% 42%);
   --clr-neutral-100: hsl(21deg 41% 92%);
   --clr-neutral-900: hsl(0deg 0% 0%);
-  --ff-primary: "Playfair Display", serif;
+  --ff-primary: "Domine", serif;
+  --ff-accent: "Playfair Display", serif;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
@@ -178,6 +179,22 @@ section {
 
 .fs-700 {
   font-size: var(--fs-700);
+}
+
+@font-face {
+  font-family: "Domine";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: local("Domine"), url("/fonts/domine-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Domine";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: local("Domine"), url("/fonts/domine-500.woff2") format("woff2");
 }
 
 @font-face {

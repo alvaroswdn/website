@@ -234,6 +234,7 @@ onMount(() => {
   .skills-title {
     font-size: var(--fs-800);
     color: var(--clr-accent-400);
+    font-family: var(--ff-accent);
   }
 
   .skills-gallery {

@@ -1,8 +1,12 @@
 <script lang="ts">
-import { getContext } from 'svelte'
-import type { Writable } from 'svelte/store'
 import { fade, fly } from 'svelte/transition'
-const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
+import type { Toggle } from '../utils/toggle.svelte';
+
+type Props = {
+  toggle: Toggle
+}
+
+const { toggle }: Props = $props()
 </script>
 
 <nav
@@ -12,7 +16,7 @@ const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
 >
   <div class="nav-toggle">
     <button
-      onclick={() => toggleNavigation.set(false)}
+      onclick={() => toggle.toggle()}
       aria-label="close navigation"
     >
       <svg
@@ -144,6 +148,7 @@ const toggleNavigation: Writable<boolean> = getContext('toggleNavigation')
   .nav-item {
     width: fit-content;
     width: -moz-fit-content;
+    font-family: var(--ff-accent);
   }
 
   .nav-toggle button:focus-visible,

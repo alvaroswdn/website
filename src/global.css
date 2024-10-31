@@ -7,7 +7,7 @@
   --clr-neutral-100: hsl(21deg 41% 92%);
   --clr-neutral-900: hsl(0deg 0% 0%);
   --ff-primary: "Domine", serif;
-  --ff-accent: "Playfair Display", serif;
+  --ff-accent: "Playfair Display", "Domine", serif;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;

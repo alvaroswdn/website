@@ -202,5 +202,5 @@ section {
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: local("Playfair Display"), url("/fonts/font-700.woff2") format("woff2");
+  src: local("Playfair Display"), url("/fonts/playfair-display-700.woff2") format("woff2");
 }

@@ -23,13 +23,6 @@ onMount(() => {
 <svelte:head>
   <title>Highlights - alvaroswdn</title>
   <meta name="description" content="Some of my best high school highlights." />
-  <link
-    rel="preload"
-    href="/fonts/font-400.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
 </svelte:head>
 
 <section class="content">
